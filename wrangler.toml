@@ -1,0 +1,9 @@
+name = "real-estate-landing-uae"
+compatibility_date = "2025-10-20"
+pages_build_output_dir = "frontend/.next"
+
+[build]
+command = "cd frontend && npm install && npm run build"
+
+[build.environment]
+NODE_VERSION = "20"
