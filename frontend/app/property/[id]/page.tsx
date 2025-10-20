@@ -17,6 +17,9 @@ import {
 import { useState } from 'react';
 import PropertyLocationMap from '@/components/map/PropertyLocationMap';
 
+
+
+
 // Helper function to get icon for location type
 const getLocationIcon = (type: string) => {
   const iconMap: { [key: string]: any } = {

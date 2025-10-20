@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
@@ -27,7 +27,7 @@ const PropertyMap = dynamic(() => import('@/components/map/PropertyMap'), {
   loading: () => <div className='flex items-center justify-center h-[600px] bg-muted rounded-lg'><p>Loading map...</p></div>
 });
 
-export default function PropertiesPage() {
+function PropertiesPageContent() {
   const searchParams = useSearchParams();
 
   const [viewMode, setViewMode] = useState<'grid' | 'list' | 'map'>('grid');
@@ -599,3 +599,12 @@ export default function PropertiesPage() {
     </div>
   );
 }
+
+export default function PropertiesPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-background flex items-center justify-center"><p>Loading...</p></div>}>
+      <PropertiesPageContent />
+    </Suspense>
+  );
+}
+

@@ -11,6 +11,7 @@ import { Badge } from '@/components/ui/badge';
 import { mockBlogPosts } from '@/lib/data/mockData';
 import { Calendar, Clock, User, ArrowLeft, Share2, Facebook, Twitter, Linkedin } from 'lucide-react';
 
+
 export default function BlogDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = use(params);
   const post = mockBlogPosts.find(p => p.slug === resolvedParams.slug);
