@@ -16,6 +16,8 @@ import {
 } from 'lucide-react';
 import { useState } from 'react';
 import PropertyLocationMap from '@/components/map/PropertyLocationMap';
+export const runtime = 'edge';
+
 
 
 

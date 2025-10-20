@@ -10,6 +10,8 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { mockBlogPosts } from '@/lib/data/mockData';
 import { Calendar, Clock, User, ArrowLeft, Share2, Facebook, Twitter, Linkedin } from 'lucide-react';
+export const runtime = 'edge';
+
 
 
 export default function BlogDetailPage({ params }: { params: Promise<{ slug: string }> }) {
