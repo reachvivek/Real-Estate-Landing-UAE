@@ -96,7 +96,7 @@ export default function HomePage() {
       <Header />
 
       {/* Hero Section */}
-      <section className='relative pt-20 pb-32 bg-muted/30'>
+      <section className='relative pt-20 pb-12 md:pb-32 bg-muted/30'>
         <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
           <div className='relative rounded-3xl overflow-hidden bg-card shadow-xl'>
             <div className='relative h-[550px] md:h-[500px]'>
@@ -200,7 +200,7 @@ export default function HomePage() {
       </section>
 
       {/* Recently Added - 2 Rows */}
-      <section className='py-20 bg-background'>
+      <section className='py-12 md:py-20 bg-background'>
         <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
           <div className='text-center mb-12'>
             <h2 className='text-3xl md:text-4xl font-bold mb-3'>Recently Added</h2>
