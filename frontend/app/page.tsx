@@ -96,14 +96,14 @@ export default function HomePage() {
       <Header />
 
       {/* Hero Section */}
-      <section className='relative pt-20 pb-48 md:pb-32 bg-muted/30'>
+      <section className='relative pt-20 pb-32 bg-muted/30'>
         <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
           <div className='relative rounded-3xl overflow-hidden bg-card shadow-xl'>
-            <div className='relative h-96 md:h-[500px]'>
+            <div className='relative h-[550px] md:h-[500px]'>
               <img src='https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200' alt='Real Estate Banner' className='w-full h-full object-cover' />
               <div className='absolute inset-0 bg-black/40' />
             </div>
-            <div className='absolute top-0 left-0 right-0 h-40 md:h-auto md:bottom-0 flex flex-col justify-center items-center text-center px-4'>
+            <div className='absolute top-0 left-0 right-0 h-32 md:h-auto md:bottom-0 flex flex-col justify-center items-center text-center px-4 pt-8 md:pt-0'>
               <h1 className='text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-2 md:mb-4'>
                 Easy way to find a perfect property
               </h1>
