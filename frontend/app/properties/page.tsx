@@ -336,7 +336,7 @@ function PropertiesPageContent() {
           </div>
 
           {/* Search and Controls */}
-          <div className='mb-6 flex flex-col md:flex-row gap-4'>
+          <div className='mb-6 flex flex-col gap-3 md:gap-4'>
             <div className='flex-1 relative'>
               <Search className='absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground' />
               <Input
@@ -346,8 +346,9 @@ function PropertiesPageContent() {
                 className='pl-10 h-12'
               />
             </div>
-            <Select value={sortBy} onValueChange={setSortBy}>
-              <SelectTrigger className='w-full md:w-48 h-12'>
+            <div className='flex gap-2'>
+              <Select value={sortBy} onValueChange={setSortBy}>
+                <SelectTrigger className='flex-1 md:w-48 h-12 text-xs md:text-sm'>
                 <SelectValue placeholder='Sort by' />
               </SelectTrigger>
               <SelectContent>
@@ -357,12 +358,13 @@ function PropertiesPageContent() {
                 <SelectItem value='size-asc'>Size: Small to Large</SelectItem>
                 <SelectItem value='size-desc'>Size: Large to Small</SelectItem>
               </SelectContent>
-            </Select>
-            <div className='flex gap-2'>
+              </Select>
+            </div>
+            <div className='flex gap-2 justify-center'>
               <Button
                 variant={viewMode === 'grid' ? 'default' : 'outline'}
                 size='icon'
-                className='h-12 w-12'
+                className='h-10 md:h-12 w-10 md:w-12'
                 onClick={() => setViewMode('grid')}
               >
                 <Grid3x3 className='w-5 h-5' />
@@ -370,7 +372,7 @@ function PropertiesPageContent() {
               <Button
                 variant={viewMode === 'list' ? 'default' : 'outline'}
                 size='icon'
-                className='h-12 w-12'
+                className='h-10 md:h-12 w-10 md:w-12'
                 onClick={() => setViewMode('list')}
               >
                 <List className='w-5 h-5' />
@@ -378,7 +380,7 @@ function PropertiesPageContent() {
               <Button
                 variant={viewMode === 'map' ? 'default' : 'outline'}
                 size='icon'
-                className='h-12 w-12'
+                className='h-10 md:h-12 w-10 md:w-12'
                 onClick={() => setViewMode('map')}
               >
                 <MapIcon className='w-5 h-5' />
@@ -388,10 +390,10 @@ function PropertiesPageContent() {
 
           {/* Type Tabs */}
           <Tabs value={selectedType} onValueChange={(v) => setSelectedType(v as any)} className='mb-6'>
-            <TabsList className='grid w-full max-w-md grid-cols-3'>
-              <TabsTrigger value='all'>All ({mockProperties.length})</TabsTrigger>
-              <TabsTrigger value='sale'>For Sale ({mockProperties.filter(p => p.type === 'sale').length})</TabsTrigger>
-              <TabsTrigger value='rent'>For Rent ({mockProperties.filter(p => p.type === 'rent').length})</TabsTrigger>
+            <TabsList className='grid w-full max-w-md grid-cols-3 h-9 md:h-10'>
+              <TabsTrigger value='all' className='text-xs md:text-sm'>All ({mockProperties.length})</TabsTrigger>
+              <TabsTrigger value='sale' className='text-xs md:text-sm'>Sale ({mockProperties.filter(p => p.type === 'sale').length})</TabsTrigger>
+              <TabsTrigger value='rent' className='text-xs md:text-sm'>Rent ({mockProperties.filter(p => p.type === 'rent').length})</TabsTrigger>
             </TabsList>
           </Tabs>
 
@@ -458,9 +460,9 @@ function PropertiesPageContent() {
           )}
 
           <div className='flex gap-6'>
-            {/* Filters Sidebar */}
+            {/* Filters Sidebar - Hidden on mobile */}
             {showFilters && viewMode !== 'map' && (
-              <aside className='w-80 shrink-0'>
+              <aside className='hidden lg:block w-80 shrink-0'>
                 <Card className='sticky top-24'>
                   <CardHeader className='flex flex-row items-center justify-between'>
                     <div className='flex items-center gap-2'>

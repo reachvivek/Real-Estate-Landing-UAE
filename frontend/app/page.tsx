@@ -96,35 +96,35 @@ export default function HomePage() {
       <Header />
 
       {/* Hero Section */}
-      <section className='relative pt-20 pb-32 bg-muted/30'>
+      <section className='relative pt-20 pb-48 md:pb-32 bg-muted/30'>
         <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
           <div className='relative rounded-3xl overflow-hidden bg-card shadow-xl'>
             <div className='relative h-96 md:h-[500px]'>
               <img src='https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200' alt='Real Estate Banner' className='w-full h-full object-cover' />
               <div className='absolute inset-0 bg-black/40' />
             </div>
-            <div className='absolute top-0 left-0 right-0 bottom-0 flex flex-col justify-center items-center text-center px-4'>
-              <h1 className='text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4'>
+            <div className='absolute top-0 left-0 right-0 h-40 md:h-auto md:bottom-0 flex flex-col justify-center items-center text-center px-4'>
+              <h1 className='text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-2 md:mb-4'>
                 Easy way to find a perfect property
               </h1>
-              <p className='text-lg md:text-xl text-white/90 max-w-2xl'>
+              <p className='text-sm sm:text-base md:text-lg lg:text-xl text-white/90 max-w-2xl'>
                 We provide a complete service for the sale, purchase or rental of real estate.
               </p>
             </div>
-            <div className='absolute bottom-0 left-0 right-0 p-6 md:p-8'>
-              <div className='bg-white dark:bg-card rounded-2xl shadow-2xl p-6'>
+            <div className='absolute bottom-0 left-0 right-0 p-3 md:p-8'>
+              <div className='bg-white dark:bg-card rounded-2xl shadow-2xl p-3 md:p-6'>
                 <Tabs defaultValue='rent' onValueChange={setSearchType}>
-                  <TabsList className='grid w-full max-w-md grid-cols-3 mb-6'>
-                    <TabsTrigger value='rent'>Rent</TabsTrigger>
-                    <TabsTrigger value='buy'>Buy</TabsTrigger>
-                    <TabsTrigger value='sell'>Sell</TabsTrigger>
+                  <TabsList className='grid w-full max-w-md grid-cols-3 mb-3 md:mb-6 h-9 md:h-10'>
+                    <TabsTrigger value='rent' className='text-xs md:text-sm'>Rent</TabsTrigger>
+                    <TabsTrigger value='buy' className='text-xs md:text-sm'>Buy</TabsTrigger>
+                    <TabsTrigger value='sell' className='text-xs md:text-sm'>Sell</TabsTrigger>
                   </TabsList>
-                  <TabsContent value={searchType}>
-                    <div className='grid grid-cols-1 md:grid-cols-11 gap-4 items-end'>
-                      <div className='md:col-span-2'>
-                        <label className='text-sm font-medium mb-2 block'>City</label>
+                  <TabsContent value={searchType} className='mt-0'>
+                    <div className='grid grid-cols-2 md:grid-cols-11 gap-2 md:gap-4 items-end'>
+                      <div className='col-span-1 md:col-span-2'>
+                        <label className='text-xs md:text-sm font-medium mb-1 md:mb-2 block'>City</label>
                         <Select value={selectedCity} onValueChange={setSelectedCity}>
-                          <SelectTrigger className='h-12'><SelectValue placeholder='Select City' /></SelectTrigger>
+                          <SelectTrigger className='h-9 md:h-12 text-xs md:text-sm'><SelectValue placeholder='City' /></SelectTrigger>
                           <SelectContent>
                             <SelectItem value='dubai'>Dubai</SelectItem>
                             <SelectItem value='abudhabi'>Abu Dhabi</SelectItem>
@@ -132,10 +132,10 @@ export default function HomePage() {
                           </SelectContent>
                         </Select>
                       </div>
-                      <div className='md:col-span-3'>
-                        <label className='text-sm font-medium mb-2 block'>Area</label>
+                      <div className='col-span-1 md:col-span-3'>
+                        <label className='text-xs md:text-sm font-medium mb-1 md:mb-2 block'>Area</label>
                         <Select value={selectedArea} onValueChange={setSelectedArea}>
-                          <SelectTrigger className='h-12'><SelectValue placeholder='Select Area' /></SelectTrigger>
+                          <SelectTrigger className='h-9 md:h-12 text-xs md:text-sm'><SelectValue placeholder='Area' /></SelectTrigger>
                           <SelectContent>
                             <SelectItem value='dubai-marina'>Dubai Marina</SelectItem>
                             <SelectItem value='business-bay'>Business Bay</SelectItem>
@@ -150,10 +150,10 @@ export default function HomePage() {
                           </SelectContent>
                         </Select>
                       </div>
-                      <div className='md:col-span-2'>
-                        <label className='text-sm font-medium mb-2 block'>Property Type</label>
+                      <div className='col-span-1 md:col-span-2'>
+                        <label className='text-xs md:text-sm font-medium mb-1 md:mb-2 block'>Type</label>
                         <Select value={selectedPropertyType} onValueChange={setSelectedPropertyType}>
-                          <SelectTrigger className='h-12'><SelectValue placeholder='Type' /></SelectTrigger>
+                          <SelectTrigger className='h-9 md:h-12 text-xs md:text-sm'><SelectValue placeholder='Type' /></SelectTrigger>
                           <SelectContent>
                             <SelectItem value='Apartment'>Apartment</SelectItem>
                             <SelectItem value='House'>Villa</SelectItem>
@@ -162,32 +162,32 @@ export default function HomePage() {
                           </SelectContent>
                         </Select>
                       </div>
-                      <div className='md:col-span-3'>
-                        <label className='text-sm font-medium mb-2 block'>Price Range</label>
+                      <div className='col-span-1 md:col-span-3'>
+                        <label className='text-xs md:text-sm font-medium mb-1 md:mb-2 block'>Price</label>
                         <Select value={selectedPriceRange} onValueChange={setSelectedPriceRange}>
-                          <SelectTrigger className='h-12'><SelectValue placeholder='Choose Price Range' /></SelectTrigger>
+                          <SelectTrigger className='h-9 md:h-12 text-xs md:text-sm'><SelectValue placeholder='Price' /></SelectTrigger>
                           <SelectContent>
                             {searchType === 'rent' ? (
                               <>
-                                <SelectItem value='0-100k'>Up to AED 100K/yr</SelectItem>
-                                <SelectItem value='100k-200k'>AED 100K - 200K/yr</SelectItem>
-                                <SelectItem value='200k-500k'>AED 200K - 500K/yr</SelectItem>
-                                <SelectItem value='500k-plus'>AED 500K+/yr</SelectItem>
+                                <SelectItem value='0-100k'>Up to 100K</SelectItem>
+                                <SelectItem value='100k-200k'>100K - 200K</SelectItem>
+                                <SelectItem value='200k-500k'>200K - 500K</SelectItem>
+                                <SelectItem value='500k-plus'>500K+</SelectItem>
                               </>
                             ) : (
                               <>
-                                <SelectItem value='0-2m'>Up to AED 2M</SelectItem>
-                                <SelectItem value='2m-5m'>AED 2M - 5M</SelectItem>
-                                <SelectItem value='5m-10m'>AED 5M - 10M</SelectItem>
-                                <SelectItem value='10m-plus'>AED 10M+</SelectItem>
+                                <SelectItem value='0-2m'>Up to 2M</SelectItem>
+                                <SelectItem value='2m-5m'>2M - 5M</SelectItem>
+                                <SelectItem value='5m-10m'>5M - 10M</SelectItem>
+                                <SelectItem value='10m-plus'>10M+</SelectItem>
                               </>
                             )}
                           </SelectContent>
                         </Select>
                       </div>
-                      <div className='md:col-span-1'>
-                        <Link href={`/properties?type=${searchType}&city=${selectedCity}&area=${selectedArea}&propertyType=${selectedPropertyType}&price=${selectedPriceRange}`}>
-                          <Button className='w-full h-12'><Search className='w-5 h-5' /></Button>
+                      <div className='col-span-2 md:col-span-1'>
+                        <Link href={`/properties?type=${searchType}&city=${selectedCity}&area=${selectedArea}&propertyType=${selectedPropertyType}&price=${selectedPriceRange}`} className='block'>
+                          <Button className='w-full h-9 md:h-12 text-xs md:text-sm'><Search className='w-3.5 md:w-5 h-3.5 md:h-5' /></Button>
                         </Link>
                       </div>
                     </div>
